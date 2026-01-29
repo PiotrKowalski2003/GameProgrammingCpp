@@ -2,7 +2,9 @@
 
 int main() {
 
-    InitWindow(350, 200, "Init Window");
+    const int width = 350;
+
+    InitWindow(width, 200, "Init Window");
 
 
 
