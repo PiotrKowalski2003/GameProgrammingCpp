@@ -2,13 +2,18 @@
 
 int main() {
 
-    const int width = 350;
-
-    InitWindow(width, 200, "Init Window");
+    // window dimensions
+    constexpr int width{800};
+    constexpr int height{450};
+    InitWindow(width, height, "Init Window");
 
     // circle coordinates
-    int circle_x {175};
-    int circle_y {100};
+    int circle_x{200};
+    int circle_y{200};
+
+    // axe coordinates
+    int axe_x{400};
+    int axe_y{0};
 
     SetTargetFPS(60);
     while (WindowShouldClose() == false) {
@@ -16,8 +21,11 @@ int main() {
         ClearBackground(WHITE);
 
         // Game logic begins
-
         DrawCircle(circle_x, circle_y, 25, BLUE);
+        DrawRectangle(axe_x,axe_y, 50,50, RED);
+
+        // move the axe
+        axe_y += 10;
 
         if (IsKeyDown(KEY_D) && circle_x < 350) {
             circle_x += 5;
