@@ -6,7 +6,7 @@ int main() {
 
     InitWindow(width, 200, "Init Window");
 
-    while (true) {
+    while (WindowShouldClose() == false) {
         BeginDrawing();
         ClearBackground(RED);
         EndDrawing();
