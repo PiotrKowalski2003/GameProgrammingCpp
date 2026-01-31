@@ -8,6 +8,9 @@ int main() {
     // initialize the window
     InitWindow(windowWidth, windowHeight, "Dapper Dasher!");
 
+    // acceleration due to gravity (pixels/frame/frame)
+    constexpr int gravity{1};
+
 
     // rectangle dimensions
     constexpr int width{50};
@@ -22,6 +25,16 @@ int main() {
         // start drawing
         BeginDrawing();
         ClearBackground(WHITE);
+
+        // perform ground check
+        if (posY >= windowHeight - height) {
+            // rectangle is on the ground
+            velocity = 0;
+        } else {
+            // rectangle is in the air
+            velocity += gravity;
+        }
+
 
         if (IsKeyPressed(KEY_SPACE)) {
             velocity -= 10;
