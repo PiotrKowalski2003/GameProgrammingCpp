@@ -12,6 +12,11 @@ int main() {
     constexpr int gravity{1};
 
 
+    Texture2D scarfy = LoadTexture("textures/scarfy.png");
+    Rectangle scarfyRec;
+    Vector2 scarfyPos;
+
+
     // rectangle dimensions
     constexpr int width{50};
     constexpr int height{80};
