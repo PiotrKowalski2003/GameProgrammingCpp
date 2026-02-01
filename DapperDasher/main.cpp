@@ -12,7 +12,17 @@ int main() {
     constexpr int gravity{1'000};
 
     // nebula variables
-    const Texture2D nebula = LoadTexture("../textures/nebula.png");
+    const Texture2D nebula = LoadTexture("../textures/12_nebula_spritesheet.png");
+    Rectangle nebulaRec;
+    nebulaRec.width = nebula.width/8;
+    nebulaRec.height = nebula.height/8;
+    nebulaRec.x = 0.0;
+    nebulaRec.y = 0.0;
+    Vector2 nebPos{windowWidth, windowHeight - nebulaRec.height};
+
+    // nebula X velocity (pixels/second)
+    int nebVel{-600};
+
 
 
     // scarfy variables
@@ -67,7 +77,10 @@ int main() {
             velocity += jumpVel;
         }
 
-        // update the position
+        // update nebula position
+        nebPos.x += nebVel * dT;
+
+        // update scarfy position
         scarfyPos.y += velocity * dT;
 
         // update running time
@@ -82,6 +95,10 @@ int main() {
             }
         }
 
+        // draw nebula
+        DrawTextureRec(nebula, nebulaRec, nebPos, WHITE);
+
+        // draw scarfy
         DrawTextureRec(scarfy, scarfyRec, scarfyPos, WHITE);
 
 
