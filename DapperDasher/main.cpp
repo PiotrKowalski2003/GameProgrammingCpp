@@ -23,6 +23,12 @@ int main() {
     scarfyPos.y = windowHeight - scarfyRec.height;
 
 
+    // animation frame
+    int frame{};
+    // amount of time before we update the animation frame
+    constexpr float updateTime{1.0/12.0};
+    float runningTime{};
+
     // is the rectangle in the air?
     bool isInAir{};
     // jump velocity (pixels/sec)
@@ -59,6 +65,18 @@ int main() {
 
         // update the position
         scarfyPos.y += velocity * dT;
+
+        // update running time
+        runningTime += dT;
+        if (runningTime >= updateTime) {
+            runningTime = 0.0;
+            // update animation frame
+            scarfyRec.x = scarfyRec.width * frame;
+            frame ++;
+            if (frame > 5) {
+                frame = 0;
+            }
+        }
 
         DrawTextureRec(scarfy, scarfyRec, scarfyPos, WHITE);
 
