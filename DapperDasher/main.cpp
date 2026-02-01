@@ -11,8 +11,12 @@ int main() {
     // acceleration due to gravity (pixels/frame/frame)
     constexpr int gravity{1'000};
 
+    // nebula variables
+    const Texture2D nebula = LoadTexture("../textures/nebula.png");
 
-    Texture2D scarfy = LoadTexture("../textures/scarfy.png");
+
+    // scarfy variables
+    const Texture2D scarfy = LoadTexture("../textures/scarfy.png");
     Rectangle scarfyRec;
     scarfyRec.width = scarfy.width/6;
     scarfyRec.height = scarfy.height;
@@ -85,6 +89,7 @@ int main() {
         EndDrawing();
     }
     UnloadTexture(scarfy);
+    UnloadTexture(nebula);
     CloseWindow();
 
 
