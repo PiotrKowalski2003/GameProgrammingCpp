@@ -23,6 +23,28 @@ int main() {
 
     // nebula variables
     const Texture2D nebula = LoadTexture("../textures/12_nebula_spritesheet.png");
+
+    // AnimData for nebula
+    AnimData nebData;
+    nebData.rec.width = nebula.width/8;
+    nebData.rec.height = nebula.height/8;
+    nebData.pos.x = 0.0;
+    nebData.pos.y = 0.0;
+    nebData.pos.x = windowWidth;
+    nebData.pos.y = windowHeight - nebula.height/8;
+    nebData.frame = 0;
+    nebData.updateTime = 1.0/12.0;
+    nebData.runningTime = 0.0;
+
+    AnimData neb2Data{
+            {0.0, 0.0, nebula.width/8, nebula.height/8},
+            {windowWidth + 300, windowHeight - nebula.height/8},
+            0,
+            1.0/16.0,
+            0.0
+        };
+
+
     Rectangle nebRec;
     nebRec.width = nebula.width/8;
     nebRec.height = nebula.height/8;
