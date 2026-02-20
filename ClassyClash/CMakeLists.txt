@@ -19,7 +19,9 @@ include_directories(${RAYLIB_INCLUDE_DIR})
 
 add_executable(ClassyClash main.cpp
         Character/Character.cpp
-        Character/Character.h)
+        Character/Character.h
+        Prop/Prop.cpp
+        Prop/Prop.h)
 target_link_libraries(ClassyClash ${RAYLIB_LIBRARY})
 
 if(WIN32)

@@ -1,0 +1,16 @@
+#ifndef CLASSYCLASH_PROP_H
+#define CLASSYCLASH_PROP_H
+#include <raylib.h>
+
+class Prop {
+public:
+    Prop(Vector2 pos, Texture2D tex);
+private:
+    Texture2D texture{};
+    Vector2 worldPos{};
+    float scale{4.f};
+};
+
+
+
+#endif //CLASSYCLASH_PROP_H
