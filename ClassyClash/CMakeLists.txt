@@ -17,7 +17,9 @@ find_path(RAYLIB_INCLUDE_DIR
 
 include_directories(${RAYLIB_INCLUDE_DIR})
 
-add_executable(ClassyClash main.cpp)
+add_executable(ClassyClash main.cpp
+        Character/Character.cpp
+        Character/Character.h)
 target_link_libraries(ClassyClash ${RAYLIB_LIBRARY})
 
 if(WIN32)
