@@ -2,8 +2,9 @@
 #define CLASSYCLASH_CHARACTER_H
 
 #include <raylib.h>
+#include "BaseCharacter.h"
 
-class Character {
+class Character : public BaseCharacter {
 public:
     Character(int winWidth, int winHeight);
     Vector2 getWorldPos(){return worldPos;}

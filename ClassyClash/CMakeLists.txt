@@ -23,7 +23,9 @@ add_executable(ClassyClash main.cpp
         Prop/Prop.cpp
         Prop/Prop.h
         Character/Enemy.cpp
-        Character/Enemy.h)
+        Character/Enemy.h
+        Character/BaseCharacter.cpp
+        Character/BaseCharacter.h)
 target_link_libraries(ClassyClash ${RAYLIB_LIBRARY})
 
 if(WIN32)
