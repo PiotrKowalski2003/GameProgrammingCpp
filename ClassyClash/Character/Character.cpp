@@ -17,6 +17,11 @@ Vector2 Character::getScreenPos() {
     };
 }
 
+void Character::takeDamage(float damage) {
+    health -= damage;
+    if (health <= 0.f) setAlive(false);
+}
+
 void Character::tick(float deltaTime){
 
     if (!getAlive()) return;
